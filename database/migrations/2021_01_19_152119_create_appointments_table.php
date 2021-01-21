@@ -15,13 +15,13 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigIncrements('teacher_id');
-            $table->bigIncrements('user_id');
-            $table->bigIncrements('subject_id');
+
+            $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('subject_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('subject_id')->references('id')->on('subjects');
-            
             $table->timestamps();
         });
     }
