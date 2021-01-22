@@ -15,6 +15,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/aboutus', function () {
+//     return view('aboutus');
+// });
+
+// Route::get('/ourteachers', function () {
+//     return view('ourteachers');
+// });
+
+// Route::get('/ourcourses', function () {
+//     return view('ourcourses');
+// });
+
+
+Route::get('/aboutus', 'PageController@aboutus')->name('aboutus');
+
+Route::get('/ourteachers', 'PageController@ourteachers')->name('ourteachers');
+Route::get('/ourcourses', 'PageController@ourcourses')->name('ourcourses');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
