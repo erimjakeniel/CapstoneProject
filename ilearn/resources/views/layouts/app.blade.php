@@ -19,12 +19,24 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+body{
+   
+     /* background-image: url("../assets/background.png");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     height: 100%; */
+     background-color: #FAF7EE;
+}
+ 
+</style>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style = "background-color: #6EB5FF;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <img src="assets/logo.png" alt="" style="width:150px; height:50px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,18 +45,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                         <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('aboutus') }}">{{ __('About Us') }} </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('ourteachers') }}">Our Teachers</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('ourcourses') }}">Our Courses</a>
+                        </li>
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        <!-- Authentication Links -->   
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Buangot') }}</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
